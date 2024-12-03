@@ -1,0 +1,33 @@
+OPEN CV
+
+cv2.imread(filename,flag) // Đọc ảnh
+
+flag : -1 : trả về ảnh bao gồm cả kênh alpha ( có độ trong suốt )
+     	0 : trả về ảnh đen trắng
+		1 : trả về ảnh màu , bỏ qua kênh alpha ( kênh trong suốt ảnh )
+
+kênh alpha (RGBA) : là phẩn mở rộng giá trị của màu RGB , chỉ số opacity quy định độ mờ , độ trong suốt của màu sắc. alpha là chỉ số opacity có giá trị từ 0 đến 1, giá trị càng nhỏ thì độ trong suốt càng nhiều
+
+cv2.imshow('Tên hiển thị', biến gán ảnh ) // Xuất ảnh
+
+
+cv2.waitkey() // Delay ( Nếu không có nó sẽ nháy cái và tắt luôn nên phải delay để xem ảnh )
++ Không truyền tham số vào thì nó sẽ trả về mã ASCII của phím được nhấn ấn phím bất kỳ sẽ tắt 
++ Nếu truyền vào tham số. VD : 3000 tức là 3s thì sau 3s trả về -1
+
+#Xoay ảnh
+cv2.rotate(biến, cv2.quay bao nhiêu độ )
+VD: img = cv2.rotate(img, cv2.ROTATE_180)
+
+#resize image
+( Kích thước của ảnh CR , CD )
+img = cv2.resize(img,(400,200))
+Hoặc
+img = cv2.resize(img,(0,0), fx = 0.5, fy = 0.5) ( gán chiều rộng và chiều dài bằng 50% chiều dài ban đầu )
+
+#Webcam
+
+cap = cv2.VideoCapture(0) , 0 1 2 3 4 nếu có nhiều cam sẽ gán nhiều id
+
+
+
